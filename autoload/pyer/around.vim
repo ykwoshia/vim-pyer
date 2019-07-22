@@ -56,6 +56,18 @@ function! pyer#around#insert(key)
         return a:key
     end
 
+    if prev_char == '>'
+        return a:key
+    end
+
+    if prev_char == '<'
+        return a:key
+    end
+
+    if prev_char == '|'
+        return a:key
+    end
+
     if current_char == "'"
         return a:key
     end

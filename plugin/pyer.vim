@@ -14,5 +14,10 @@ let g:pyerLoaded = 1
 let s1 = g:pyer#around#instance
 call s1.init()
 
-let s2 = g:pyer#smartcolon#instance
-call s2.init()
+" for python
+" let s2 = g:pyer#smartcolon#instance
+" call s2.init()
+
+" for c++
+let s3 = g:pyer#smartop#instance
+call s3.init()
