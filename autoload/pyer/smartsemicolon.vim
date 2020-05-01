@@ -5,9 +5,9 @@ function! pyer#smartsemicolon#new() abort
     let s = {}
 
     function! s.AutosmartsemicolonMap()
-        execute 'inoremap <silent> : <C-R>=pyer#smartsemicolon#insertcolon()<CR>'
+        " execute 'inoremap <silent> : <C-R>=pyer#smartsemicolon#insertcolon()<CR>'
         execute 'inoremap <silent> ; <C-R>=pyer#smartsemicolon#insert()<CR>'
-        execute 'inoremap <silent> <A-a> <C-R>=pyer#smartsemicolon#insert()<CR>'
+        " execute 'inoremap <silent> <A-a> <C-R>=pyer#smartsemicolon#insert()<CR>'
     endfunction
 
     function! s.init()
@@ -42,8 +42,9 @@ function! pyer#smartsemicolon#insert()
         return ";"
     end
 
-    if col('.') < col('$') - 1
-        return "\<Esc>A;"
+    " if col('.') < col('$') - 1
+    if col('.') < col('$')
+        return "\<Esc>A;\<CR>"
     end
     " Ignore auto close if prev character is \
 
@@ -59,7 +60,7 @@ function! pyer#smartsemicolon#insert()
         end
     end
     
-    return ";"
+    return ";\<CR>"
 endfunction
 
 let g:pyer#smartsemicolon#instance = pyer#smartsemicolon#new()

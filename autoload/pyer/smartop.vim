@@ -6,8 +6,12 @@ function! pyer#smartop#new() abort
 
     function! s.AutosmartopMap()
         execute 'inoremap <silent> , <C-R>=pyer#smartop#insertcomma()<CR>'
+        let s1 = g:pyer#smartcolon#instance
+        call s1.init()
+        let s2 = g:pyer#smartsemicolon#instance
+        call s2.init()
         " execute 'inoremap <silent> : <C-R>=pyer#smartop#insertcolon()<CR>'
-        execute 'inoremap <silent> ; <C-R>=pyer#smartop#insertsemicolon()<CR>'
+        " execute 'inoremap <silent> ; <C-R>=pyer#smartop#insertsemicolon()<CR>'
     endfunction
 
     function! s.init()

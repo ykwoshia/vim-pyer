@@ -6,7 +6,7 @@ function! pyer#smartcolon#new() abort
 
     function! s.AutosmartcolonMap()
         execute 'inoremap <silent> : <C-R>=pyer#smartcolon#insert()<CR>'
-        execute 'inoremap <silent> <A-a> <C-R>=pyer#smartcolon#insert()<CR>'
+        " execute 'inoremap <silent> <A-a> <C-R>=pyer#smartcolon#insert()<CR>'
     endfunction
 
     function! s.init()
