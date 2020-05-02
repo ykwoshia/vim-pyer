@@ -42,14 +42,6 @@ function! pyer#smartsemicolon#insert()
         return ";"
     end
 
-    " if col('.') < col('$') - 1
-    if col('.') < col('$')
-        return "\<Esc>A;\<CR>"
-    end
-    " Ignore auto close if prev character is \
-
-    " Skip the character if current character is the same as input
-
     if line =~ '^\s*\(return\)\>'
         if col('.') == col('$')
             if prev_char == ';'
@@ -59,6 +51,19 @@ function! pyer#smartsemicolon#insert()
             end
         end
     end
+
+    if line =~ '^\s*for\>('
+        return "; "
+    end
+
+    " if col('.') < col('$') - 1
+    if col('.') < col('$')
+        return "\<Esc>A;\<CR>"
+    end
+    " Ignore auto close if prev character is \
+
+    " Skip the character if current character is the same as input
+
     
     return ";\<CR>"
 endfunction
