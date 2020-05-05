@@ -49,6 +49,8 @@ function! pyer#smartsemicolon#insert()
             else
                 return ";\<Esc>"
             end
+        else
+            return "\<Esc>A;\<Esc>"
         end
     end
 
